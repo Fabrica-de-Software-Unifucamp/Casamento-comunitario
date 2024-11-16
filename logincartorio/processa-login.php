@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $senha = $conn->real_escape_string($senha); //
 
     //consulta direta ao banco de dados para buscar a senha correspondente ao usuário
-    $sql = "SELECT senha FROM adm WHERE usuario = '$usuario'";
+    $sql = "SELECT senha FROM loginadm WHERE usuario = '$usuario'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {

@@ -110,27 +110,23 @@
   </head>
 
   <body>
-
-    <!-- Overlay -->
     <div class="overlay"></div>
-
-    <!-- Formulário de Login -->
     <form action="processa-login.php" class="form-signin">
       <!-- Ícone/Imagem no topo -->
       <img class="mb-4" src="./assets/img/casamento.png" alt="" width="200" height="200">
 
       <h1 class="h3 mb-3 font-weight-normal text-center" style="color: black;">Faça login</h1>
 
-      <!-- Campo de email com ícone -->
+      <!-- Campo de usuario com ícone -->
       <div class="form-group position-relative">
         <span class="input-group-text"><i class="fas fa-envelope"></i></span>
-        <input type="email" id="inputEmail" class="form-control mb-3" placeholder="Seu email" required autofocus>
+        <input type="username" id="username" name="username" class="form-control mb-3" placeholder="Usuário" required autofocus>
       </div>
 
       <!-- Campo de senha com ícone -->
       <div class="form-group position-relative">
         <span class="input-group-text"><i class="fas fa-lock"></i></span>
-        <input type="password" id="inputPassword" class="form-control mb-3" placeholder="Senha" required>
+        <input type="password" id="password" name="password" class="form-control mb-3" placeholder="Senha" required>
       </div>
 
       <!-- Checkbox de lembrar de mim -->

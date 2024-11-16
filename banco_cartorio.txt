@@ -63,3 +63,8 @@ CREATE TABLE Documentos (
     Nome VARCHAR(255),
     FOREIGN KEY (ID_Conjuge) REFERENCES Conjuge(ID_Conjuge)
 );
+
+CREATE TABLE loginadm(
+    usuario varchar(20),
+    senha varchar(20)
+);
