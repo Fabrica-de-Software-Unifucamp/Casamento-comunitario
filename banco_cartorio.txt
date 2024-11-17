@@ -1,0 +1,69 @@
+-- Tabela de Conjuge
+CREATE TABLE Conjuge (
+    ID_Conjuge INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    Nome VARCHAR(255) NOT NULL,
+    CPF CHAR(11) NOT NULL,
+    RG VARCHAR(20) NOT NULL,
+    Data_Nascimento DATE NOT NULL,
+    Estado_Civil VARCHAR(50) NOT NULL,
+    Numero VARCHAR(10) NOT NULL,
+    Rua VARCHAR(255) NOT NULL,
+    Bairro VARCHAR(255) NOT NULL,
+    Cidade VARCHAR(255) NOT NULL,
+    UF CHAR(2) NOT NULL,
+    CEP CHAR(8) NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+    Telefone1 VARCHAR(15) NOT NULL,
+    Telefone2 VARCHAR(15)
+);
+
+-- Tabela de Casal
+CREATE TABLE Casal (
+    ID_Casal INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    ID_Conjuge1 INT NOT NULL,
+    ID_Conjuge2 INT NOT NULL,
+    Renda DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (ID_Conjuge1) REFERENCES Conjuge(ID_Conjuge),
+    FOREIGN KEY (ID_Conjuge2) REFERENCES Conjuge(ID_Conjuge)
+);
+
+-- Tabela de Filho
+CREATE TABLE Filho (
+    ID_Filho INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    Nome VARCHAR(255) NOT NULL,
+    CPF CHAR(11) NOT NULL,
+    ID_Casal INT NOT NULL,
+    Certidao_Nascimento VARCHAR(255) NOT NULL,
+    FOREIGN KEY (ID_Casal) REFERENCES Casal(ID_Casal)
+);
+
+-- Tabela de Testemunhas
+CREATE TABLE Testemunha (
+    ID_Testemunha INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    Nome VARCHAR(255) NOT NULL,
+    CPF CHAR(11) NOT NULL,
+    ID_Casal INT NOT NULL,
+    Copia_Identidade VARCHAR(255) NOT NULL,
+    Copia_Residencia VARCHAR(255) NOT NULL,
+    FOREIGN KEY (ID_Casal) REFERENCES Casal(ID_Casal)
+);
+
+-- Tabela de Documentos
+CREATE TABLE Documentos (
+    ID_Documentos INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    ID_Conjuge INT NOT NULL,
+    Certidao_Nascimento VARCHAR(255),
+    Copia_Identidade VARCHAR(255),
+    Copia_Residencia VARCHAR(255),
+    Certidao_Casamento VARCHAR(255),
+    Certidao_Obito VARCHAR(255),
+    Partilha_Bens VARCHAR(255),
+    Comprovante_Renda VARCHAR(255),
+    Data_Upload TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    Nome VARCHAR(255),
+    FOREIGN KEY (ID_Conjuge) REFERENCES Conjuge(ID_Conjuge)
+);
+CREATE TABLE loginadm(
+    usuario varchar(20),
+    senha varchar(20)
+);

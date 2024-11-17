@@ -1,22 +1,149 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login/title>
-</head>
-<body>
-    <div class="quiz-container">
-        <h2>Login</h2>
-        <form action="processa-login.php" method="post">
-            <label for="username">Usuário:</label>
-            <input type="text" id="username" name="username" required>
-            
-            <label for="password">Senha:</label>
-            <input type="password" id="password" name="password" required>
-            
-            <input type="submit" value="Entrar">
-        </form>
-    </div>
-</body>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <title>Login</title>
+
+    <style>
+      body {
+        background: url('seu-fundo.jpg') no-repeat center center fixed;
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Montserrat', sans-serif;
+        color: #fff;
+      }
+
+      .overlay {
+        background-color: rgba(0, 0, 0, 0.6);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+
+      .form-signin {
+        position: relative;
+        z-index: 2;
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        max-width: 400px;
+        width: 100%;
+        text-align: left;
+      }
+
+      .form-signin img {
+        margin-bottom: 20px;
+        display: block;
+        margin: 0 auto;
+      }
+
+      h1 {
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: black;
+        text-align: center;
+      }
+
+      .form-control {
+        border-radius: 10px;
+        border: 2px solid #000; /* Cor da borda preta */
+        padding-left: 40px;
+        transition: border-color 0.3s;
+      }
+
+      .form-control:focus {
+        border-color: #000; /* Cor preta ao focar no input */
+        box-shadow: none;   /* Remove a sombra padrão */
+      }
+
+      .input-group-text {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        background: none;
+        color: black;
+      }
+
+      .btn-primary {
+        background-color: #000; /* Cor de fundo preta */
+        border-color: #000; /* Borda preta */
+        border-radius: 10px;
+        font-weight: 600;
+        width: 100%;
+        transition: background-color 0.3s, border-color 0.3s;
+      }
+
+      .btn-primary:hover {
+        background-color: #333; /* Um tom mais claro de preto ao passar o mouse */
+        border-color: #333; /* Borda preta clara ao passar o mouse */
+      }
+
+      .checkbox label {
+        font-size: 0.9rem;
+        color: #555;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+    <div class="overlay"></div>
+    <form action="processa-login.php" class="form-signin">
+      <!-- Ícone/Imagem no topo -->
+      <img class="mb-4" src="./assets/img/casamento.png" alt="" width="200" height="200">
+
+      <h1 class="h3 mb-3 font-weight-normal text-center" style="color: black;">Faça login</h1>
+
+      <!-- Campo de usuario com ícone -->
+      <div class="form-group position-relative">
+        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+        <input type="username" id="username" name="username" class="form-control mb-3" placeholder="Usuário" required autofocus>
+      </div>
+
+      <!-- Campo de senha com ícone -->
+      <div class="form-group position-relative">
+        <span class="input-group-text"><i class="fas fa-lock"></i></span>
+        <input type="password" id="password" name="password" class="form-control mb-3" placeholder="Senha" required>
+      </div>
+
+      <!-- Checkbox de lembrar de mim -->
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Lembrar de mim
+        </label>
+      </div>
+
+      <!-- Botão de login -->
+      <button class="btn btn-lg btn-primary btn-block" type="submit" style="background-color: black;">Login</button>
+
+    </form>
+
+    <!-- Bootstrap e jQuery JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
 </html>
